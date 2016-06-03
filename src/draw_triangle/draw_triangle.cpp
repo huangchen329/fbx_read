@@ -271,10 +271,11 @@
 //		glDeleteShader(fs);
 //	}
 
-//旋转物体
+//旋转物体k
 #include <sb7.h>
 #include <shader.h>
 #include <sb7ktx.h>
+#include <vmath.h>
 
 class simpleclear_app : public sb7::application
 {
@@ -289,6 +290,7 @@ class simpleclear_app : public sb7::application
 
 	virtual void render(double currentTime)
 	{
+		glViewport(0, 0, info.windowWidth, info.windowHeight);
 		static const GLfloat red[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 		glClearBufferfv(GL_COLOR, 0, red);
 		glUseProgram(program);
@@ -300,7 +302,7 @@ class simpleclear_app : public sb7::application
 		glActiveTexture(GL_TEXTURE1); 
         glBindTexture(GL_TEXTURE_2D, texture1);
 		glUniform1i(glGetUniformLocation(program, "ourTexture2"), 1);
-		glViewport(0, 0, info.windowWidth, info.windowHeight);
+		glUniformMatrix4fv(glGetUniformLocation(program, "transform"), 1, GL_FALSE, vmath::translate((float)1, (float)1, (float)0));
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
     }
