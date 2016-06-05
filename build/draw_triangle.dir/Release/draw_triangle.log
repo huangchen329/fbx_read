@@ -1,0 +1,26 @@
+﻿生成启动时间为 2016/6/5 0:41:31。
+     1>项目“F:\learn_opengl\learn_opengl\build\draw_triangle.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IF:\learn_opengl\learn_opengl\include /I"F:\learn_opengl\learn_opengl\extern\glfw-3.0.4\include" /nologo /W3 /WX- /O2 /Ob2 /Oy- /D WIN32 /D _WINDOWS /D NDEBUG /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /openmp /Fo"draw_triangle.dir\Release\\" /Fd"draw_triangle.dir\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp
+         draw_triangle.cpp
+     1>F:\learn_opengl\learn_opengl\include\sb7.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>f:\learn_opengl\learn_opengl\include\sb7ext.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(310): warning C4018: “<”: 有符号/无符号不匹配
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(311): warning C4018: “<”: 有符号/无符号不匹配
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(322): warning C4018: “<”: 有符号/无符号不匹配
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(323): warning C4018: “<”: 有符号/无符号不匹配
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(333): warning C4018: “<”: 有符号/无符号不匹配
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(334): warning C4018: “<”: 有符号/无符号不匹配
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(362): warning C4101: “w”: 未引用的局部变量
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(362): warning C4101: “h”: 未引用的局部变量
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(363): warning C4101: “bpp”: 未引用的局部变量
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(361): warning C4101: “i”: 未引用的局部变量
+     1>F:\learn_opengl\learn_opengl\src\draw_triangle\draw_triangle.cpp(360): warning C4101: “tmp_bit”: 未引用的局部变量
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\learn_opengl\learn_opengl\bin\draw_triangle.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:F:/learn_opengl/learn_opengl/lib /LIBPATH:F:/learn_opengl/learn_opengl/lib/Release kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\lib\sb7.lib glfw3.lib FreeImage.lib glu32.lib opengl32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"F:/learn_opengl/learn_opengl/bin/draw_triangle.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:/learn_opengl/learn_opengl/lib/draw_triangle.lib" /MACHINE:X86 /SAFESEH  /machine:X86 draw_triangle.dir\Release\draw_triangle.obj
+         draw_triangle.vcxproj -> F:\learn_opengl\learn_opengl\bin\draw_triangle.exe
+     1>已完成生成项目“F:\learn_opengl\learn_opengl\build\draw_triangle.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.89

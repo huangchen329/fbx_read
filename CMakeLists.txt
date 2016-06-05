@@ -21,11 +21,11 @@ find_package(OpenGL)
 set (CMAKE_DEBUG_POSTFIX "_d")
 
 if(WIN32)
-set(COMMON_LIBS sb7 optimized glfw3 FreeImage debug glfw3_d ${GLFW_LIBRARIES} ${OPENGL_LIBRARIES})
+set(COMMON_LIBS sb7 optimized glfw3 FreeImage libfbxsdk debug glfw3_d ${GLFW_LIBRARIES} ${OPENGL_LIBRARIES})
 elseif (UNIX)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GLFW REQUIRED glfw3)
-set(COMMON_LIBS sb7 glfw3 X11 Xrandr Xinerama Xi Xxf86vm Xcursor GL rt dl FreeImage)
+set(COMMON_LIBS sb7 glfw3 X11 Xrandr Xinerama Xi Xxf86vm Xcursor GL rt dl FreeImage libfbxsdk)
 else()
 set(COMMON_LIBS sb7)
 endif()
@@ -37,6 +37,7 @@ add_library(sb7
             src/sb7/sb7color.cpp
             src/sb7/sb7ktx.cpp
 			#src/sb7/sb7freeimage.cpp
+			src/sb7/sb7fbxmodel.cpp
             src/sb7/sb7object.cpp
             src/sb7/sb7shader.cpp
             src/sb7/sb7textoverlay.cpp

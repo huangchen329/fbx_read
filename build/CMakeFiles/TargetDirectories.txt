@@ -1,0 +1,6 @@
+F:/learn_opengl/learn_opengl/build/CMakeFiles/sb7.dir
+F:/learn_opengl/learn_opengl/build/CMakeFiles/debug.dir
+F:/learn_opengl/learn_opengl/build/CMakeFiles/draw_triangle.dir
+F:/learn_opengl/learn_opengl/build/CMakeFiles/release.dir
+F:/learn_opengl/learn_opengl/build/CMakeFiles/ALL_BUILD.dir
+F:/learn_opengl/learn_opengl/build/CMakeFiles/ZERO_CHECK.dir

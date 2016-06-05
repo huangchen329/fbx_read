@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\learn_opengl\learn_opengl\CMakeLists.txt" />
+    <CustomBuild Include="F:\learn_opengl\learn_opengl\build\CMakeFiles\7ca201f074634e28137c8632ec446a96\release.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\learn_opengl\learn_opengl\build\CMakeFiles\release" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{416D2989-04CA-3CFB-B969-79A8E8CE2314}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,32 @@
+# CMake generation dependency list for this directory.
+F:/learn_opengl/learn_opengl/CMakeLists.txt
+F:/learn_opengl/learn_opengl/build/CMakeFiles/3.5.1/CMakeSystem.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeSystemSpecificInitialize.cmake
+F:/learn_opengl/learn_opengl/build/CMakeFiles/3.5.1/CMakeCCompiler.cmake
+F:/learn_opengl/learn_opengl/build/CMakeFiles/3.5.1/CMakeCXXCompiler.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeSystemSpecificInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeGenericSystem.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/Platform/Windows.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/Platform/WindowsPaths.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeCInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeLanguageInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/Platform/Windows-MSVC-C.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/Platform/Windows-MSVC.cmake
+F:/learn_opengl/learn_opengl/build/CMakeFiles/3.5.1/CMakeRCCompiler.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeRCInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeCommonLanguageInclude.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeCXXInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeLanguageInformation.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/Compiler/MSVC-CXX.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/Platform/Windows-MSVC.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeCommonLanguageInclude.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindOpenGL.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindPackageHandleStandardArgs.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindPackageMessage.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeParseArguments.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindOpenMP.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindPackageHandleStandardArgs.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/FindPackageMessage.cmake
+D:/Program Files (x86)/CMake/share/cmake-3.5/Modules/CMakeParseArguments.cmake
+F:/learn_opengl/learn_opengl/build/templates/vs2013.vcxproj.user.in

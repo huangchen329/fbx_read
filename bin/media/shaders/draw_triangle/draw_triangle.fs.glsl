@@ -1,12 +1,16 @@
 #version 430 core
 
-in vec4 vs_color;
+uniform vec3 lightdir;
+
+in vec3 FragPos;
+in vec3 Normal;
+//in vec4 vs_color;
 out vec4 color;
 
 void main(void)
 {
-	color = vec4(sin(gl_FragCoord.x * 0.25) * 0.5 + 0.5, 
-				 cos(gl_FragCoord.y * 0.25) * 0.5 + 0.5,
-				 sin(gl_FragCoord.x * 0.15) * cos(gl_FragCoord.y * 0.15),
-				 1.0);
+	vec3 norm = normalize(Normal);
+	float diff = max(dot(norm, lightdir), 0.0);
+	vec3 diffuse = diff * vec3(1.0, 1.0, 1.0);
+	color = vec4(vec3(1.0, 1.0, 1.0) * diffuse, 1.0);
 }

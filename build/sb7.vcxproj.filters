@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\learn_opengl\learn_opengl\src\sb7\sb7.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\learn_opengl\learn_opengl\src\sb7\sb7color.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\learn_opengl\learn_opengl\src\sb7\sb7ktx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\learn_opengl\learn_opengl\src\sb7\sb7fbxmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\learn_opengl\learn_opengl\src\sb7\sb7object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\learn_opengl\learn_opengl\src\sb7\sb7shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\learn_opengl\learn_opengl\src\sb7\sb7textoverlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\learn_opengl\learn_opengl\src\sb7\gl3w.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\learn_opengl\learn_opengl\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{77C53E43-5412-3959-9EA3-85B5057FB1D2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
