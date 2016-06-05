@@ -25,8 +25,8 @@
 
 #ifndef __SB7_H__
 #define __SB7_H__
-
 #ifdef WIN32
+
     #pragma once
     #define _CRT_SECURE_NO_WARNINGS 1
 
@@ -112,7 +112,7 @@ public:
 //        }
 //        else
         {
-            window = glfwCreateWindow(info.windowWidth, info.windowHeight, info.title, info.flags.fullscreen ? glfwGetPrimaryMonitor() : NULL, NULL);
+			window = glfwCreateWindow(info.windowWidth, info.windowHeight, info.title, NULL, NULL);
             if (!window)
             {
                 fprintf(stderr, "Failed to open window\n");
@@ -184,8 +184,8 @@ public:
         info.majorVersion = 3;
         info.minorVersion = 2;
 #else
-        info.majorVersion = 4;
-        info.minorVersion = 3;
+        info.majorVersion = 3;
+        info.minorVersion = 2;
 #endif
         info.samples = 0;
         info.flags.all = 0;
@@ -248,10 +248,11 @@ public:
                                 GLsizei length,
                                 const GLchar* message)
     {
-#ifdef _WIN32
-        OutputDebugStringA(message);
-        OutputDebugStringA("\n");
-#endif /* _WIN32 */
+//#ifdef _WIN32
+//        OutputDebugStringA(message);
+//        OutputDebugStringA("\n");
+//#endif /* _WIN32 */
+		printf("%s\n", message);
     }
 
     void getMousePosition(int& x, int& y)

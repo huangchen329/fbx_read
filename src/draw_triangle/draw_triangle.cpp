@@ -276,6 +276,108 @@
 #include <shader.h>
 #include <sb7ktx.h>
 #include <vmath.h>
+#include <freeimage.h>
+#include <malloc.h>
+
+typedef struct   
+{  
+    unsigned int         w;  
+    unsigned int             h;  
+    unsigned char           *buf;  
+    unsigned int          rgb_mode;  
+}GLBITMAP;
+
+
+GLBITMAP * FIBitmap2GLBitmap(FIBITMAP *fibmp)
+{
+	int i, j;
+	int pitch = FreeImage_GetPitch(fibmp);
+	unsigned char *bits = FreeImage_GetBits(fibmp);
+	GLBITMAP *glbmp = (GLBITMAP *)malloc(sizeof(GLBITMAP));	
+
+	if ( !glbmp ) return NULL;
+	
+	glbmp->w = FreeImage_GetWidth(fibmp);
+	glbmp->h = FreeImage_GetHeight(fibmp);	
+
+	if ( !(glbmp->buf = (unsigned char *)malloc(glbmp->w*glbmp->h*4)) ) return NULL;
+	glbmp->rgb_mode = GL_RGBA;
+	for ( i = 0; i < glbmp->h; ++i ) {
+		for ( j = 0; j < glbmp->w; ++j ) {
+			glbmp->buf[(i*glbmp->w+j)*4+0] = bits[i*pitch+j*4+2];
+			glbmp->buf[(i*glbmp->w+j)*4+1] = bits[i*pitch+j*4+1];
+			glbmp->buf[(i*glbmp->w+j)*4+2] = bits[i*pitch+j*4+0];
+			glbmp->buf[(i*glbmp->w+j)*4+3] = bits[i*pitch+j*4+3];
+		}
+	}
+
+	return glbmp;
+}
+
+void FreeGLBitmap(GLBITMAP *glbmp)
+{
+	if ( glbmp ) {
+		if ( glbmp->buf ) free(glbmp->buf);
+		free(glbmp);
+	}
+}
+
+
+GLuint loadtexture(const char *filename)  
+{  
+    GLuint tex = 0;  
+    int tmp_bit;  
+    int i;  
+    int w, h;  
+    int bpp;  
+    unsigned char *bits = NULL;  
+    FREE_IMAGE_FORMAT fif = FIF_UNKNOWN;  
+    FIBITMAP *bitmap = NULL;  
+    GLBITMAP *glbmp = NULL;  
+  
+    fif = FreeImage_GetFileType(filename, 0);  
+    if ( FIF_UNKNOWN == fif ) {  
+        fif = FreeImage_GetFIFFromFilename(filename);  
+        if ( FIF_UNKNOWN == fif )  
+            return 0;     
+    }  
+    if ( FreeImage_FIFSupportsReading(fif) )   
+        bitmap = FreeImage_Load(fif, filename, 0);  
+      
+    if ( !bitmap )   
+        return 0;  
+
+	int bitsPerPixel =  FreeImage_GetBPP(bitmap);
+	FIBITMAP* bitmap32;
+    if (bitsPerPixel == 32)
+    {
+        bitmap32 = bitmap;
+    }
+    else
+    {
+        bitmap32 = FreeImage_ConvertTo32Bits(bitmap);
+    }
+  
+    glbmp = FIBitmap2GLBitmap(bitmap32);  
+    if ( !glbmp )  
+        return 0;  
+  
+    glGenTextures(1, &tex);  
+    glBindTexture(GL_TEXTURE_2D, tex);  
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);  
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); 
+	glTexImage2D(GL_TEXTURE_2D, 0, glbmp->rgb_mode, glbmp->w, glbmp->h, 0, glbmp->rgb_mode, GL_UNSIGNED_BYTE, glbmp->buf);
+	glGenerateMipmap(tex);
+      
+    FreeGLBitmap(glbmp);  
+    FreeImage_Unload(bitmap32);
+	if (bitsPerPixel != 32)
+    {
+        FreeImage_Unload(bitmap);
+    }
+  
+    return tex;  
+}  
 
 class simpleclear_app : public sb7::application
 {
@@ -302,7 +404,7 @@ class simpleclear_app : public sb7::application
 		glActiveTexture(GL_TEXTURE1); 
         glBindTexture(GL_TEXTURE_2D, texture1);
 		glUniform1i(glGetUniformLocation(program, "ourTexture2"), 1);
-		glUniformMatrix4fv(glGetUniformLocation(program, "transform"), 1, GL_FALSE, vmath::translate((float)1, (float)1, (float)0));
+		glUniformMatrix4fv(glGetUniformLocation(program, "transform"), 1, GL_FALSE, vmath::translate((float)0, (float)0, (float)0));
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
     }
@@ -325,17 +427,15 @@ class simpleclear_app : public sb7::application
 		GLuint vbo;
 		GLuint ebo;
 
-
 		load_shader();
-		glActiveTexture(GL_TEXTURE0); 
-		glGenTextures(1, &texture);
         // Load texture from file
-        sb7::ktx::file::load("media/textures/brick.ktx", texture);
-		glActiveTexture(GL_TEXTURE1); 
-		glGenTextures(1, &texture1);
+		//glGenTextures(1, &texture);
+       // sb7::ktx::file::load("media/textures/brick.ktx", texture);
+		texture = loadtexture("media/textures/butterfly.jpg");
         // Load texture from file
-        sb7::ktx::file::load("media/textures/floor.ktx", texture1);
-
+		//glGenTextures(1, &texture1);
+        //sb7::ktx::file::load("media/textures/floor.ktx", texture1);
+		texture1 =loadtexture("media/textures/city.jpg");
 		glGenVertexArrays(1, &vao);
 		glBindVertexArray(vao);
 		glGenBuffers(1, &vbo);
